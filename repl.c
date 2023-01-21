@@ -3,12 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct {
-    char* buffer;
-    size_t buffer_length;
-    ssize_t input_buffer;
-} InputBuffer;
-
+#include "repl.h"
 // Initialize a input buffer
 InputBuffer* new_input_buffer() {
     InputBuffer* input_buffer = (InputBuffer*)malloc(sizeof(InputBuffer));
