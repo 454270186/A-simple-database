@@ -1,4 +1,4 @@
-# A simple database demo for **Sqlilite**
+# xiaofeiDB - A simple database demo for **Sqlilite**
 
 ## Design of my Sqlite demo
 The **front-end** consists of:
