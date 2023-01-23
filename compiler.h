@@ -1,7 +1,6 @@
 #ifndef _COMPILER_H
 #define _COMPILER_H
 
-
 #include "repl.h"
 
 // compiler will deal with "meta_command" and "SQL Statement"
@@ -30,5 +29,11 @@ typedef struct {
 
 // deal with meta_command
 MetaCommandResult do_meta_command(InputBuffer* input_buffer);
+
+// deal with prepare_statement
+PrepareResult prepare_statement(InputBuffer* input_buffer, Statement* statement);
+
+// execute the statement
+void execute_statement(Statement* statement);
 
 #endif
