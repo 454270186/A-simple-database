@@ -22,6 +22,7 @@ So far, xiaofeiDB supports two operations:
 - print all rows out
 
 **Data Structure**
+
 It's very similar as Sqlite which uses B-tree for CRUD, However, for now, I use array instead of tree.
 
 Each inserted row will be serialized and then compactly arranged in memory and stored like pages.
@@ -38,7 +39,8 @@ a page has many rows and a table has many pages. This structure is just like vir
         memcpy(&(destination->email), source + EMAIL_OFFSET, EMAIL_SIZE);
     }
 ```
-** Search to write/read **
+**Search to write/read**
+
 This function is how to figure out where to read/write in memory for a particular row:
 ```c
     void* row_slot(Table* table, uint32_t rows_num) {
@@ -56,5 +58,6 @@ This function is how to figure out where to read/write in memory for a particula
 }
 ```
 
-** TEST **
+**TEST**
+
 ![Test](./img/insert-select_test.png)
