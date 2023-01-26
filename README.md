@@ -61,3 +61,13 @@ This function is how to figure out where to read/write in memory for a particula
 **TEST**
 
 ![Test](./img/insert-select_test.png)
+
+## Deal with some bugs
+**TODO**
+- deal with the stackover
+- deal with some invalid input like *negative id* or something
+
+**FIX**
+During test, when the input string is longer than the max length we set, `scanf()` will cause a buffer overflow and writing into a unexpected place. 
+
+To fix that, I use `strtok()` to split the input buffer. Before storing the input string into Row model, checking the length of each string first to avoid buffer overflow and id validation
